@@ -43,7 +43,7 @@ const Contact = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false }}
-      className="w-full bg-[#0f0f0f] text-white py-20 px-6"
+      className="w-full bg-[#0f0f0f] text-white py-20 px-6 scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left Content */}

@@ -21,13 +21,14 @@ export const PortfolioProvider = ({ children }) => {
       personal: {
         name: "Divyansh",
         title: "Creative Full-Stack Developer (MERN)",
-        subtitle:  ["Frontend", "Backend", "Animation", "MongoDB"],
+        subtitle: ["Frontend", "Backend", "Animation", "MongoDB"],
         bio: [
           "I'm a Creative Full-Stack Developer working with the MERN stack, with a deep interest in frontend engineering, animations, and user experience.",
           "I enjoy transforming ideas into clean, scalable, and expressive web applications — from designing interactive UIs to building reliable backend systems.",
           "I believe good software is not just functional, but also thoughtful, performant, and enjoyable to use.",
         ],
-        resume: "/resume/Divyansh_Raj_Tripathi_Resume.pdf",
+        // ✅ Use import.meta.env.BASE_URL for correct path
+        resume: `${import.meta.env.BASE_URL}resume/Divyansh_Raj_Tripathi_Resume.pdf`,
         avatar: "xoxo", // Placeholder for avatar
       },
 
@@ -58,44 +59,44 @@ export const PortfolioProvider = ({ children }) => {
       ],
 
       // Projects (placeholder - you can expand this)
-     projects: [
-  {
-    id: 1,
-    title: "Reels Food App",
-    description:
-      "A reel-based food discovery app with interactive UI and order flow.",
-    tech: ["React", "Tailwind", "Node", "MongoDB"],
-    live: "",
-    github: "https://github.com/xoxo-Divyansh/Reels-Foods-app",
-  },
-  {
-    id: 2,
-    title: "Mood Based Music App",
-    description:
-      "Detects user mood using camera API and recommends music accordingly.",
-    tech: ["React", "API", "GSAP"],
-    live: "",
-    github: "https://github.com/xoxo-Divyansh/Mood-Based-Music-Player",
-  },
-  {
-    id: 3,
-    title: "Pintrest Clone (MERN) App",
-    description:
-      "Detects user mood using camera API and recommends music accordingly.",
-    tech: ["React", "API", "GSAP"],
-    live: "",
-    github: "https://github.com/xoxo-Divyansh/pinterest-web-app",
-  },
-],
-
+      projects: [
+        {
+          id: 1,
+          title: "Reels Food App",
+          description:
+            "A reel-based food discovery app with interactive UI and order flow.",
+          tech: ["React", "Tailwind", "Node", "MongoDB"],
+          live: "",
+          github: "https://github.com/xoxo-Divyansh/Reels-Foods-app",
+        },
+        {
+          id: 2,
+          title: "Mood Based Music App",
+          description:
+            "Detects user mood using camera API and recommends music accordingly.",
+          tech: ["React", "API", "GSAP"],
+          live: "",
+          github: "https://github.com/xoxo-Divyansh/Mood-Based-Music-Player",
+        },
+        {
+          id: 3,
+          title: "Pintrest Clone (MERN) App",
+          description:
+            "Detects user mood using camera API and recommends music accordingly.",
+          tech: ["React", "API", "GSAP"],
+          live: "",
+          github: "https://github.com/xoxo-Divyansh/pinterest-web-app",
+        },
+      ],
 
       // Contact Information
       contact: {
         email: "drt.vip777@gmail.com",
         phone: "+91 87872 47613",
         location: "Hardoi, Uttar Pradesh, India",
-        resume: "./resume/Divyansh_Raj_Tripathi_Resume.pdf",
-        linkedin: "https://linkedin.com/in/Divyansh-raj-tripathi-3211b8266?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        resume: "personal.resume",
+        linkedin:
+          "https://linkedin.com/in/Divyansh-raj-tripathi-3211b8266?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         github: "https://github.com/xoxo-Divyansh",
         // Add more contact details
       },

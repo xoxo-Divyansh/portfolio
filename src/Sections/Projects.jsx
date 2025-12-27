@@ -7,7 +7,7 @@ const Projects = () => {
   return (
     <section
      id="projects"
-      className="w-full bg-[#0f0f0f] text-white py-20">
+      className="w-full bg-[#0f0f0f] text-white py-20 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           Projects
