@@ -5,16 +5,16 @@ import { usePortfolio } from "../../Context/PortfolioProvider";
 import { staggerContainer, fadeUp } from "../../Animations/Variants";
 
 const About = () => {
-  const { personal, highlights } = usePortfolio();
+  const { personal, about } = usePortfolio(); // keep personal for bio
 
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, {
     once: true,
     margin: "-100px",
   });
-  
-  // ✅ activeIndex MUST be defined here
+
   const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <section
       id="about"
@@ -25,18 +25,21 @@ const About = () => {
         {/* LEFT CONTENT */}
         <div className="space-y-6">
           <h2 className="text-3xl md:text-4xl font-bold text-purple-400">
-            About Me
+            {about.heading}
           </h2>
-          {personal.bio.map((paragraph, index) => (
-            <TypingText
-              key={index}
-              text={paragraph}
-              speed={15}
-              start={isInView && index === activeIndex}
-              onComplete={() => setActiveIndex((prev) => prev + 1)}
-              className="text-gray-400 leading-relaxed"
-            />
-          ))}
+
+          <div className="space-y-6 min-h-[200px]">
+            {personal.bio.map((paragraph, index) => (
+              <TypingText
+                key={`bio-${index}-${paragraph.slice(0, 10)}`}
+                text={paragraph}
+                speed={15}
+                start={isInView && index === activeIndex}
+                onComplete={() => setActiveIndex((prev) => prev + 1)}
+                className="text-gray-400 leading-relaxed"
+              />
+            ))}
+          </div>
         </div>
 
         {/* RIGHT HIGHLIGHTS */}
@@ -47,7 +50,7 @@ const About = () => {
           viewport={{ once: false, amount: 0.3 }}
           className="grid grid-cols-1 sm:grid-cols-2 gap-4"
         >
-          {highlights.map((item) => (
+          {about.highlights.map((item) => (
             <motion.div
               key={item}
               variants={fadeUp}
@@ -61,5 +64,5 @@ const About = () => {
     </section>
   );
 };
-//
+
 export default About;

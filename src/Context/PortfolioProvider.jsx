@@ -28,7 +28,9 @@ export const PortfolioProvider = ({ children }) => {
           "I believe good software is not just functional, but also thoughtful, performant, and enjoyable to use.",
         ],
         // ✅ Use import.meta.env.BASE_URL for correct path
-        resume: `${import.meta.env.BASE_URL}resume/Divyansh_Raj_Tripathi_Resume.pdf`,
+        resume: `${
+          import.meta.env.BASE_URL
+        }resume/Divyansh_Raj_Tripathi_Resume.pdf`,
         avatar: "xoxo", // Placeholder for avatar
       },
 
@@ -114,9 +116,22 @@ export const PortfolioProvider = ({ children }) => {
         },
         // Add more education
       ],
-    }),
-    []
-  );
+
+      // ✅ About Section
+      about: {
+        heading: "About Me",
+        paragraph: `
+      I’m a MERN stack developer passionate about crafting interactive web experiences.
+      I build scalable, responsive, and expressive web applications focusing on frontend, animations, and performance.
+    `,
+        highlights: [
+          "Proficient in React.js, Tailwind CSS, and GSAP",
+          "Experience with Node.js, Express.js, and MongoDB",
+          "Strong focus on UI/UX and web animations",
+          "Build full-stack scalable applications",
+        ],
+      },
+    }),[]);
 
   return (
     <PortfolioContext.Provider value={portfolioData}>

@@ -134,14 +134,6 @@ const Contact = () => {
             onSubmit={sendEmail}
             className="flex flex-col gap-4"
           >
-            {/* Subject */}
-            <input
-              type="text"
-              name="title"
-              placeholder="Subject"
-              className="p-3 rounded-lg bg-[#0f0f0f] border border-gray-700 focus:border-purple-400 outline-none"
-            />
-
             {/* Name */}
             <motion.input
               whileFocus={{ scale: 1.02 }}
@@ -152,6 +144,15 @@ const Contact = () => {
               className="p-3 rounded-lg bg-[#0f0f0f] border border-gray-700 focus:border-purple-400 outline-none"
             />
 
+            {/* Subject */}
+            <input
+              type="text"
+              name="title"
+              placeholder="Subject"
+              className="p-3 rounded-lg bg-[#0f0f0f] border border-gray-700 focus:border-purple-400 outline-none"
+            />
+
+            {/* Email */}
             <input
               type="email"
               name="email"

@@ -37,7 +37,7 @@ const Navbar = () => {
             <li key={link.id}>
               <button
                 onClick={() => handleScroll(link.id)}
-                className="cursor-pointer hover:text-purple-400 transition bg-transparent border-none p-0 text-inherit"
+                className="cursor-pointer hover:text-green-400 hover:font-semibold transition bg-transparent border-none p-0 text-inherit"
               >
                 {link.name}
               </button>
