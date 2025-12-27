@@ -19,7 +19,7 @@ const About = () => {
     <section
       id="about"
       ref={sectionRef}
-      className="w-full bg-[#0f0f0f] text-white py-24"
+      className="w-full bg-[#0f0f0f] text-white py-24 scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         {/* LEFT CONTENT */}

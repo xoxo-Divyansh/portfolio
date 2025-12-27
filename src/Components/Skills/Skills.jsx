@@ -6,7 +6,7 @@ const Skills = () => {
   const { skills } = usePortfolio();
 
   return (
-    <section id="skills" className="py-20 bg-[#0f0f0f] text-white">
+    <section id="skills" className="py-20 bg-[#0f0f0f] text-white scroll-mt-24">
       <div
         
         className="max-w-7xl mx-auto px-5"

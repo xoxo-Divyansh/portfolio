@@ -16,7 +16,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen w-full bg-[#0f0f0f] text-white flex items-center pt-20 md:pt-0 overflow-x-hidden"
+      className="min-h-screen w-full bg-[#0f0f0f] text-white flex items-center pt-24 scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* LEFT CONTENT */}
@@ -51,8 +51,8 @@ const Hero = () => {
           </motion.h3>
 
           {/* SUBTITLE */}
-          <h4 className="text-sm font-medium text-gray-400 uppercase tracking-wide hover:text-[#1C1C1C]">
-            {personal.subtitle}
+          <h4 className="text-sm font-medium text-gray-400 uppercase tracking-wide cursor-pointer hover:text-[#1C1C1C]">
+            {personal.subtitle.join(" • ")}
           </h4>
 
           {/* BIO */}
@@ -101,7 +101,6 @@ const Hero = () => {
 
         {/* RIGHT VISUAL */}
         <div className="relative flex justify-center md:justify-end overflow-visible">
-
           {/* Glow background */}
           <motion.div
             variants={glowPulse}

@@ -10,7 +10,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="w-full bg-[#0b0b0b] text-gray-400 border-t border-white/10">
+    <footer className="w-full bg-[#0b0b0b] text-gray-400 border-t border-white/10 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6 py-14 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Brand */}
         <div className="space-y-3">
@@ -25,6 +25,14 @@ const Footer = () => {
         <div className="space-y-3">
           <h4 className="text-white font-medium">Quick Links</h4>
           <ul className="space-y-2">
+            <li>
+              <button
+                onClick={() => scrollToSection("home")}
+                className="hover:text-purple-400"
+              >
+                Home
+              </button>
+            </li>
             <li>
               <button
                 onClick={() => scrollToSection("projects")}
@@ -44,7 +52,7 @@ const Footer = () => {
             {personal?.resume && (
               <li>
                 <a
-                  href={personal.resume}
+                   href="https://drive.google.com/file/d/11J-w_3nFUkTbyf8AaLu04bK8PjLAobo8_BdqTQFAITc/view"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-purple-400"

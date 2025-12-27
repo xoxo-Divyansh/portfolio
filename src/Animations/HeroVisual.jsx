@@ -1,8 +1,4 @@
 // src/Animations/heroVisual.js
-
-
-
-
 export const heroIdle = {
   animate: {
     y: [0, -18, 0],
