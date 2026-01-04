@@ -24,8 +24,8 @@ export const PortfolioProvider = ({ children }) => {
         subtitle: ["Frontend", "Backend", "Animation", "MongoDB"],
         bio: [
           "I'm a Creative Full-Stack Developer working with the MERN stack, with a deep interest in frontend engineering, animations, and user experience.",
-          "I enjoy transforming ideas into clean, scalable, and expressive web applications — from designing interactive UIs to building reliable backend systems.",
-          "I believe good software is not just functional, but also thoughtful, performant, and enjoyable to use.",
+          "I  enjoy transforming ideas into clean, scalable, and expressive web applications — from designing interactive UIs to building reliable backend systems.",
+          "I  believe good software is not just functional, but also thoughtful, performant, and enjoyable to use.",
         ],
         // ✅ Use import.meta.env.BASE_URL for correct path
         resume: `${
@@ -48,16 +48,6 @@ export const PortfolioProvider = ({ children }) => {
           category: "Animations & Tools",
           skills: ["GSAP", "Git", "GitHub", "REST APIs"],
         },
-      ],
-
-      // About Highlights
-      highlights: [
-        "Frontend-focused UI/UX",
-        "GSAP Animations",
-        "MERN Full-Stack",
-        "Scalable Code",
-        "Responsive Design",
-        "Performance-Driven",
       ],
 
       // Projects (placeholder - you can expand this)
@@ -125,11 +115,16 @@ export const PortfolioProvider = ({ children }) => {
       I build scalable, responsive, and expressive web applications focusing on frontend, animations, and performance.
     `,
         highlights: [
-          "Proficient in React.js, Tailwind CSS, and GSAP",
-          "Experience with Node.js, Express.js, and MongoDB",
-          "Strong focus on UI/UX and web animations",
-          "Build full-stack scalable applications",
-        ],
+  "Proficient in React.js, Tailwind CSS, and GSAP for building interactive user interfaces",
+  "Experience developing backend services using Node.js, Express.js, and MongoDB",
+  "Strong focus on UI/UX design, micro-interactions, and smooth web animations",
+  "Build scalable full-stack applications with clean and maintainable code",
+  "Experience implementing authentication and authorization flows (JWT, protected routes)",
+  "Comfortable working with REST APIs and integrating third-party services",
+  "Familiar with Git, GitHub, and collaborative development workflows",
+  "Continuously learning modern web technologies and improving development practices",
+],
+
       },
     }),[]);
 

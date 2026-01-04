@@ -3,8 +3,8 @@ import { usePortfolio } from "../../Context/PortfolioProvider";
 
 const navLinks = [
   { name: "Home", id: "home" },
-  { name: "About", id: "about" },
   { name: "Skills", id: "skills" },
+  { name: "About", id: "about" },
   { name: "Projects", id: "projects" },
   { name: "Contact", id: "contact" },
 ];

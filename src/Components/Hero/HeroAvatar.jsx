@@ -41,8 +41,8 @@ const HeroAvatar = ({ src }) => {
       variants={heroFloat}
       animate={floatControls}
       drag="x"
-      dragConstraints={{ left: 0, right: 0 }}
-      dragElastic={0.15}
+      dragConstraints={{ left: 50, right: 0 }}
+      dragElastic={0.5}
       onDragStart={() => {
         spinRef.current?.stop();
         floatControls.stop(); // stop floating instantly

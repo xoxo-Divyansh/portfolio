@@ -23,7 +23,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="w-full bg-[#0f0f0f] text-white py-20 scroll-mt-24"
+      className="w-full bg-[#0f0f0f] text-white py-20 scroll-mt-24 min-h-screen"
     >
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
@@ -64,7 +64,7 @@ const Projects = () => {
               <div className="flex gap-4">
                 <a
                   href={project.link}
-                  className="text-purple-400 hover:text-purple-300 underline"
+                  className="text-zinc-400 text-sm hover:text-purple-300 "
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -72,7 +72,7 @@ const Projects = () => {
                 </a>
                 <a
                   href={project.github}
-                  className="text-purple-400 hover:text-purple-300 underline"
+                  className="text-purple-600 text-sm hover:text-purple-300 underline"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

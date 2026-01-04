@@ -52,7 +52,7 @@ const Footer = () => {
             {personal?.resume && (
               <li>
                 <a
-                   href="https://drive.google.com/file/d/11J-w_3nFUkTbyf8AaLu04bK8PjLAobo8_BdqTQFAITc/view"
+                   href="https://drive.google.com/file/d/1KrpuDbhz-QAbm2bt0e0w8Sdm1tx-gLtK/view?usp=sharing/view"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-purple-400"

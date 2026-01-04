@@ -2,15 +2,27 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import TypingText from "../Animations/TypingText";
 import { usePortfolio } from "../../Context/PortfolioProvider";
-import { staggerContainer, fadeUp } from "../../Animations/Variants";
+
+const highlightVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.08,
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  }),
+};
 
 const About = () => {
-  const { personal, about } = usePortfolio(); // keep personal for bio
+  const { personal, about } = usePortfolio();
 
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, {
     once: true,
-    margin: "-100px",
+    margin: "-120px",
   });
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -24,42 +36,55 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
         {/* LEFT CONTENT */}
         <div className="space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-purple-400">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="text-3xl md:text-4xl font-bold text-purple-400"
+          >
             {about.heading}
-          </h2>
+          </motion.h2>
 
-          <div className="space-y-6 min-h-[200px]">
+          <div className="space-y-6 min-h-[300px]">
             {personal.bio.map((paragraph, index) => (
               <TypingText
-                key={`bio-${index}-${paragraph.slice(0, 10)}`}
+                key={`bio-${index}`}
                 text={paragraph}
-                speed={15}
+                speed={14}
                 start={isInView && index === activeIndex}
                 onComplete={() => setActiveIndex((prev) => prev + 1)}
-                className="text-gray-400 leading-relaxed"
+                className="text-gray-400 leading-loose"
               />
             ))}
           </div>
         </div>
 
         {/* RIGHT HIGHLIGHTS */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-4"
-        >
-          {about.highlights.map((item) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {about.highlights.map((item, index) => (
             <motion.div
               key={item}
-              variants={fadeUp}
-              className="border border-purple-500/30 rounded-xl px-5 py-4 text-gray-300 hover:bg-purple-500/10 transition"
+              custom={index}
+              variants={highlightVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.4 }}
+              whileHover={{ y: -4 }}
+              className="
+                border border-purple-500/30
+                rounded-xl px-5 py-4
+                text-gray-300
+                bg-transparent
+                transition-all duration-300
+                hover:border-purple-500/60
+                hover:bg-purple-500/10
+              "
             >
               {item}
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

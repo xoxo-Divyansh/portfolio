@@ -5,9 +5,10 @@ import { fadeUp, fadeIn } from "../../Animations/Variants";
 import { glowPulse } from "../../Animations/HeroVisual";
 import heroRobot from "../../assets/hero/Astra.png";
 import HeroAvatar from "./HeroAvatar";
+import SocialIcons from "./SocialIcons";
 
 const Hero = () => {
-  const { personal, contact } = usePortfolio();
+  const { personal } = usePortfolio();
 
   const handleScroll = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -18,9 +19,14 @@ const Hero = () => {
       id="home"
       className="min-h-screen w-full bg-[#0f0f0f] text-white flex items-center pt-24 scroll-mt-24"
     >
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* LEFT CONTENT */}
-        <div className="">
+        <div>
+          {/* SOCIAL ICONS */}
+          <div className="flex justify-center md:justify-start mb-6">
+            <SocialIcons />
+          </div>
+
           {/* HERO HEADING */}
           <motion.h1
             variants={fadeUp}
@@ -29,10 +35,8 @@ const Hero = () => {
             className="text-4xl md:text-6xl font-bold leading-tight"
           >
             <AnimatedText text="Hello, " />
-
             <span className="inline-flex gap-3">
               <span className="text-green-400 leading-none">I&#39;m</span>
-
               <span className="text-purple-400 leading-none">
                 <AnimatedText text={personal.name} />
               </span>
@@ -51,7 +55,7 @@ const Hero = () => {
           </motion.h3>
 
           {/* SUBTITLE */}
-          <h4 className="text-sm font-medium text-gray-400 uppercase tracking-wide cursor-pointer hover:text-[#1C1C1C]">
+          <h4 className="text-xs md:text-sm font-medium text-gray-400 uppercase tracking-wide">
             {personal.subtitle.join(" • ")}
           </h4>
 
@@ -61,7 +65,7 @@ const Hero = () => {
             initial="hidden"
             whileInView="visible"
             transition={{ delay: 0.2 }}
-            className="text-gray-400 max-w-xl leading-relaxed"
+            className="mt-4 text-gray-400 max-w-xl leading-relaxed"
           >
             {personal.bio[0]}
           </motion.p>
@@ -72,31 +76,32 @@ const Hero = () => {
             initial="hidden"
             whileInView="visible"
             transition={{ delay: 0.4 }}
-            className="flex flex-wrap gap-4 pt-4"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 max-w-md"
           >
             <button
               onClick={() => handleScroll("projects")}
-              className="px-6 py-3 bg-purple-500 text-black rounded-xl font-medium hover:bg-purple-400 transition"
+              className="w-full px-6 py-3 bg-purple-500 text-black rounded-xl font-medium hover:bg-purple-400 transition"
             >
               View Projects
             </button>
 
             <button
               onClick={() => handleScroll("contact")}
-              className="px-6 py-3 border border-purple-500 rounded-xl hover:bg-purple-500 hover:text-black transition"
+              className="w-full px-6 py-3 border border-purple-500 rounded-xl hover:bg-purple-500 hover:text-black transition"
             >
               Contact Me
             </button>
-
-            <a
-              href={contact.resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 text-purple-400 underline underline-offset-4 hover:text-green-500 transition"
-            >
-              Download Resume
-            </a>
           </motion.div>
+
+          {/* RESUME LINK */}
+          <a
+            href="https://drive.google.com/file/d/1KrpuDbhz-QAbm2bt0e0w8Sdm1tx-gLtK/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block mt-4 text-center sm:text-left text-sm text-purple-400 underline underline-offset-4 hover:text-green-500 transition"
+          >
+            Download Resume
+          </a>
         </div>
 
         {/* RIGHT VISUAL */}
