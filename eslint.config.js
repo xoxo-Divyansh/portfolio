@@ -34,6 +34,38 @@ export default defineConfig([
       "react/prop-types": "off",
       "react/react-in-jsx-scope": "off", // Not needed with new JSX transform
       "react-refresh/only-export-components": "off", // Allow hooks in context files
+      "react/no-unknown-property": [
+        "error",
+        {
+          ignore: [
+            // React Three Fiber properties
+            "intensity",
+            "position",
+            "rotation",
+            "scale",
+            "castShadow",
+            "receiveShadow",
+            "color",
+            "args",
+            "attach",
+            "geometry",
+            "material",
+            "object",
+            "dispose",
+            // Material properties
+            "emissive",
+            "emissiveIntensity",
+            "roughness",
+            "metalness",
+            "transparent",
+            "opacity",
+            "side",
+            "wireframe",
+            "flatShading",
+            "vertexColors",
+          ],
+        },
+      ],
     },
   },
 ]);

@@ -1,0 +1,184 @@
+/**
+ * Typography System
+ * 
+ * Modern display support
+ * Font: Space Grotesk + Plus Jakarta Sans
+ * 
+ * Hierarchy:
+ * - Hero Title: 48-64px, Bold, Red
+ * - Section Heading: 28-36px, SemiBold, Red
+ * - Body Text: 14-16px, Gray
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  /* ============================================
+   * FONT FAMILIES
+   * ============================================ */
+  --font-primary: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Space Grotesk", "Plus Jakarta Sans", "Inter", sans-serif;
+  
+  /* ============================================
+   * FONT SIZES
+   * ============================================ */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 1.875rem;    /* 30px */
+  --text-4xl: 2.25rem;     /* 36px */
+  --text-5xl: 3rem;        /* 48px */
+  --text-6xl: 3.75rem;     /* 60px */
+  --text-7xl: 4.5rem;      /* 72px */
+  
+  /* ============================================
+   * FONT WEIGHTS
+   * ============================================ */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  
+  /* ============================================
+   * LINE HEIGHTS
+   * ============================================ */
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+  
+  /* ============================================
+   * LETTER SPACING
+   * ============================================ */
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+}
+
+/* ============================================
+ * BASE TYPOGRAPHY
+ * ============================================ */
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-normal);
+  line-height: var(--leading-normal);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+ * HEADINGS
+ * ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+}
+
+/* Hero Title */
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem); /* 40-64px responsive */
+  font-weight: var(--font-extrabold);
+  color: var(--accent-red);
+}
+
+/* Section Heading */
+h2 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem); /* 28-36px responsive */
+  font-weight: var(--font-bold);
+  color: var(--accent-red);
+}
+
+/* Subsection */
+h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+}
+
+/* Card Title */
+h4 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+}
+
+/* ============================================
+ * BODY TEXT
+ * ============================================ */
+
+p {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+}
+
+/* Small text */
+small {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+}
+
+/* ============================================
+ * UTILITY CLASSES
+ * ============================================ */
+
+/* Font Sizes */
+.text-xs { font-size: var(--text-xs); }
+.text-sm { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-lg { font-size: var(--text-lg); }
+.text-xl { font-size: var(--text-xl); }
+.text-2xl { font-size: var(--text-2xl); }
+.text-3xl { font-size: var(--text-3xl); }
+.text-4xl { font-size: var(--text-4xl); }
+.text-5xl { font-size: var(--text-5xl); }
+.text-6xl { font-size: var(--text-6xl); }
+
+/* Font Weights */
+.font-normal { font-weight: var(--font-normal); }
+.font-medium { font-weight: var(--font-medium); }
+.font-semibold { font-weight: var(--font-semibold); }
+.font-bold { font-weight: var(--font-bold); }
+.font-extrabold { font-weight: var(--font-extrabold); }
+
+/* Line Heights */
+.leading-tight { line-height: var(--leading-tight); }
+.leading-normal { line-height: var(--leading-normal); }
+.leading-relaxed { line-height: var(--leading-relaxed); }
+
+/* Letter Spacing */
+.tracking-tight { letter-spacing: var(--tracking-tight); }
+.tracking-normal { letter-spacing: var(--tracking-normal); }
+.tracking-wide { letter-spacing: var(--tracking-wide); }
+
+/* ============================================
+ * SPECIAL TEXT STYLES
+ * ============================================ */
+
+/* Red Highlight */
+.text-highlight {
+  color: var(--accent-red);
+  font-weight: var(--font-semibold);
+}
+
+/* Green Action Text */
+.text-action {
+  color: var(--accent-green);
+  font-weight: var(--font-semibold);
+}
+
+/* Gradient Text (Red to Green) */
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent-red) 0%, var(--accent-green) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
