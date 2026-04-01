@@ -1,6 +1,7 @@
 import EdgeParticles from "./Components/background/EdgeParticles";
 import MinimalNavbar from "./Components/Rebuild/MinimalNavbar";
 import About from "./Sections/About";
+import Contact from "./Sections/Contact";
 import Hero from "./Sections/Hero";
 import Projects from "./Sections/Projects";
 import VisualIdentity from "./Sections/VisualIdentity";
@@ -29,6 +30,7 @@ function App() {
           <VisualIdentity />
           <Projects />
           <About />
+          <Contact />
         </main>
       </div>
     </div>
