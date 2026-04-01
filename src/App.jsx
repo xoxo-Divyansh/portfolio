@@ -3,6 +3,7 @@ import MinimalNavbar from "./Components/Rebuild/MinimalNavbar";
 import About from "./Sections/About";
 import Hero from "./Sections/Hero";
 import Projects from "./Sections/Projects";
+import VisualIdentity from "./Sections/VisualIdentity";
 
 function App() {
   return (
@@ -25,8 +26,9 @@ function App() {
         <MinimalNavbar />
         <main>
           <Hero />
-          <About />
+          <VisualIdentity />
           <Projects />
+          <About />
         </main>
       </div>
     </div>

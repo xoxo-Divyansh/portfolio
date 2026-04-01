@@ -3,6 +3,7 @@ import { usePortfolio } from "../Context/PortfolioProvider";
 
 const Hero = () => {
   const { contact, personal } = usePortfolio();
+  const heroPortraitSrc = `${import.meta.env.BASE_URL}hero/portrait-cinematic.png`;
 
   return (
     <section id="hero" data-section="hero" className="rebuild-hero">
@@ -17,13 +18,23 @@ const Hero = () => {
 
           <h1 className="rebuild-display">
             <span className="rebuild-display__line rebuild-display__line--lead">
-              Full-stack
+              <span className="rebuild-display__lead-top">Full-stack</span>
+              <span className="rebuild-display__lead-lockup">
+                <span className="rebuild-display__highlight rebuild-display__highlight--green">
+                  MERN
+                </span>
+                <span className="rebuild-display__lead-role">Developer</span>
+              </span>
             </span>
             <span className="rebuild-display__line rebuild-display__line--focus">
-              JavaScript <span className="rebuild-display__accent">systems</span>
+              building systems with
             </span>
             <span className="rebuild-display__line rebuild-display__line--trail">
-              with interface focus.
+              interface{" "}
+              <span className="rebuild-display__highlight rebuild-display__highlight--orange">
+                focus
+              </span>
+              .
             </span>
           </h1>
 
@@ -57,17 +68,19 @@ const Hero = () => {
 
         <div className="rebuild-stage" aria-hidden="true">
           <div className="rebuild-stage__frame" />
-          <div className="rebuild-stage__glass" />
-          <div className="rebuild-stage__grid" />
-          <div className="rebuild-stage__caption">Visual Identity Stage</div>
-          <div className="rebuild-stage__note">Portrait-led composition</div>
+          <div className="rebuild-stage__backdrop" />
           <div className="rebuild-stage__backlight" />
-          <div className="rebuild-stage__beam" />
-          <div className="rebuild-stage__halo" />
-          <div className="rebuild-stage__presence" />
-          <div className="rebuild-stage__trace rebuild-stage__trace--left" />
-          <div className="rebuild-stage__trace rebuild-stage__trace--right" />
-          <div className="rebuild-stage__orbital" />
+          <div className="rebuild-stage__portrait-wrap">
+            <img
+              className="rebuild-stage__portrait"
+              src={heroPortraitSrc}
+              alt=""
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+            />
+          </div>
+          <div className="rebuild-stage__blend" />
           <div className="rebuild-stage__ground" />
         </div>
       </div>
