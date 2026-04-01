@@ -14,7 +14,18 @@ export const usePortfolio = () => {
 
 export const PortfolioProvider = ({ children }) => {
   const portfolioData = useMemo(() => {
-    const resumePath = `${import.meta.env.BASE_URL}resume/Divyansh_Raj_Tripathi_Resume.pdf`;
+    const resumePath = `${import.meta.env.BASE_URL}resume/Divyansh_Raj_Tripathi_Resume 2026.pdf`;
+    const assetPath = (path) => `${import.meta.env.BASE_URL}${path}`;
+    const createProjectImages = (folder, entries) =>
+      entries.map(({ file, type = "image", alt, caption, poster }) => ({
+        type,
+        src: assetPath(`ProjectsVisuals/${folder}/${file}`),
+        alt,
+        caption,
+        ...(poster
+          ? { poster: assetPath(`ProjectsVisuals/${folder}/${poster}`) }
+          : {}),
+      }));
 
     return {
       personal: {
@@ -82,114 +93,216 @@ export const PortfolioProvider = ({ children }) => {
         "UI/UX Design",
       ],
 
+      identity: {
+        heading: "Visual Identity",
+        summary: [
+          "I build cinematic, emotion-driven web experiences.",
+          "Focused on clean UI, meaningful interactions, and real-world products.",
+          "The goal is always the same: products that feel intentional, useful, and production-ready.",
+        ],
+        cards: [
+          {
+            title: "UI Design Thinking",
+            description: "Clean, minimal, and emotion-first interfaces.",
+            icon: "layout",
+          },
+          {
+            title: "Development Approach",
+            description: "Scalable architecture with real-world use cases.",
+            icon: "system",
+          },
+          {
+            title: "Performance Mindset",
+            description: "Fast, optimized, production-ready builds.",
+            icon: "speed",
+          },
+          {
+            title: "Problem Solving",
+            description: "Focused on building useful and usable products.",
+            icon: "focus",
+          },
+        ],
+        tech: [
+          "React",
+          "Node",
+          "MongoDB",
+          "Next.js",
+          "Tailwind",
+          "Framer Motion",
+        ],
+        preview: {
+          mediaSrc: "",
+          mediaPoster: "",
+          mediaType: "video",
+          items: [
+            {
+              name: "OneTool",
+              label: "Utility platform",
+              title: "Modular everyday tooling",
+              description:
+                "A clean, extendable workspace for real repeat-use tools.",
+              accent: "System thinking",
+            },
+            {
+              name: "Noorvii",
+              label: "Content product",
+              title: "Reading-first content flow",
+              description:
+                "A calmer publishing interface backed by structured retrieval.",
+              accent: "Usability focus",
+            },
+            {
+              name: "Portfolio",
+              label: "Narrative interface",
+              title: "Editorial motion and hierarchy",
+              description:
+                "A guided presentation that turns personal work into product proof.",
+              accent: "Experience design",
+            },
+          ],
+        },
+      },
+
       projects: [
         {
-          id: 1,
+          id: "onetool",
           title: "OneTool",
-          meta: [
-            { label: "Type", value: "Multi-utility web platform" },
-            { label: "Focus", value: "Usability + modular growth" },
-            { label: "Role", value: "Product design and full-stack build" },
-          ],
+          eyebrow: "Utility platform / modular workflow",
           description:
-            "A centralized web platform that brings everyday developer and productivity utilities into one cleaner workflow.",
-          proofTitle:
-            "A tool platform built so added functionality does not turn into interface sprawl.",
-          proofSummary:
-            "Instead of scattering small utilities across separate pages, OneTool keeps the experience consistent, quick to navigate, and ready for extension as more tools are added.",
-          highlights: [
-            "Combined JSON formatting, API testing, PDF generation, image compression, and study tools into one usable system",
-            "Used modular architecture so new tools can be added without destabilizing existing flows",
-            "Handled processing on the client where it improved speed and reduced unnecessary server load",
+            "A multi-utility web platform that brings recurring developer and productivity tasks into one cleaner, faster workspace.",
+          problem:
+            "The product solves the friction of jumping across disconnected single-purpose tools by keeping formatting, testing, conversion, and study actions inside one consistent system.",
+          strength:
+            "Its strongest quality is structural clarity: every utility fits the same interface rhythm, so the product can expand without becoming visually noisy.",
+          features: [
+            "Combines JSON formatting, API testing, PDF generation, image compression, and study tools in one environment.",
+            "Uses modular composition so new utilities can be added without breaking the overall product flow.",
+            "Keeps high-frequency tasks fast with client-side handling where server round-trips are unnecessary.",
+            "Maintains one readable interaction pattern across tools, which lowers friction for repeat use.",
           ],
-          outcome:
-            "This project shows how I approach utility, structure, and performance in a build designed for real repeat-use value.",
-          tech: ["JavaScript", "React", "Client-side Processing"],
-          live: "",
-          github: "",
-          status: "Project links available on request",
-          visualType: "masonry",
+          tech: ["React", "JavaScript", "Client-side Processing", "Utility UX"],
+          liveUrl: "https://one-tool-xoxo.vercel.app/",
+          repoUrl: "https://github.com/xoxo-Divyansh/OneTool",
+          images: createProjectImages("onetool", [
+            {
+              file: "Onetool_Home.png",
+              alt: "OneTool home interface screenshot",
+              caption:
+                "The main surface organizes multiple utilities into a calm, navigable workspace instead of a scattered tool list.",
+            },
+            {
+              file: "Onetool_JSON_Formatter.png",
+              alt: "OneTool JSON formatter interface screenshot",
+              caption:
+                "Formatting tools stay inside the same product shell, so utility work feels connected instead of fragmented.",
+            },
+            {
+              file: "OneTool_JSON_Formatter-II.png",
+              alt: "OneTool JSON formatter expanded interface screenshot",
+              caption:
+                "A wider working state shows how the interface keeps structure and readability even when tool density increases.",
+            },
+            {
+              file: "onetool_API_tester.png",
+              alt: "OneTool API tester interface screenshot",
+              caption:
+                "Testing flows inherit the same visual rhythm, which makes switching between utilities feel immediate and familiar.",
+            },
+            {
+              file: "Onetool_PDF_generater.png",
+              alt: "OneTool PDF generator interface screenshot",
+              caption:
+                "Document generation lives inside the same product logic, extending the platform without breaking visual consistency.",
+            },
+            {
+              file: "Onetool_ImgCompresser.png",
+              alt: "OneTool image compressor interface screenshot",
+              caption:
+                "Media handling tools keep the same calm framing, helping the product scale like one system instead of separate widgets.",
+            },
+            {
+              file: "Onetool_StudyTimer.png",
+              alt: "OneTool study timer interface screenshot",
+              caption:
+                "The study timer proves the interface can stretch beyond developer tooling while still feeling cohesive.",
+            },
+          ]),
         },
         {
-          id: 2,
-          title: "Personal Portfolio",
-          meta: [
-            { label: "Type", value: "Interactive portfolio experience" },
-            { label: "Focus", value: "Motion-led navigation" },
-            { label: "Role", value: "Design and frontend development" },
-          ],
+          id: "noorvii",
+          title: "Noorvii Shayaris",
+          eyebrow: "Content product / reading-first interface",
           description:
-            "A developer portfolio built as a guided experience rather than a standard scroll-and-card presentation.",
-          proofTitle:
-            "A portfolio that controls pacing, hierarchy, and transitions to shape how the work is read.",
-          proofSummary:
-            "The build was meant to present work with stronger narrative control, using motion and section-based flow so the interface feels deliberate instead of generic.",
-          highlights: [
-            "Built section-based navigation and GSAP-driven transitions to guide attention",
-            "Used a non-scrollable structure to keep the reading rhythm controlled",
-            "Focused on spacing, typography, and motion as part of the product language, not as decoration",
+            "A Shayari publishing and discovery platform designed around calmer reading, clearer browsing, and dependable content retrieval.",
+          problem:
+            "It addresses the clutter common in content-heavy products by giving poetry, categories, and discovery flows more breathing room and stronger reading focus.",
+          strength:
+            "The product feels strongest where backend structure and reading experience meet: content stays organized, while the interface remains easy to scan and return to.",
+          features: [
+            "Supports publishing, storage, and retrieval through a structured MongoDB and Express foundation.",
+            "Shapes the interface around reading comfort instead of overloading the screen with noisy decoration.",
+            "Keeps routing and category access straightforward so growing content still feels browsable.",
+            "Turns a niche content idea into a more complete product experience with usability in mind.",
           ],
-          outcome:
-            "It became proof that interface direction and implementation discipline can reinforce each other in a personal product.",
-          tech: ["React", "GSAP", "Section Navigation"],
-          live: "https://xoxo-divyansh.github.io/portfolio",
-          github: "",
-          status: "Source shared selectively",
-          visualType: "pulse",
-        },
-        {
-          id: 3,
-          title: "Noorvii Shayari",
-          meta: [
-            { label: "Type", value: "Content sharing platform" },
-            { label: "Focus", value: "Publishing and reading flow" },
-            { label: "Role", value: "Full-stack development" },
-          ],
-          description:
-            "A reading-first platform for publishing and browsing Shayari posts with clean structure and dependable data flow.",
-          proofTitle:
-            "A content product shaped around readability, routing clarity, and reliable retrieval.",
-          proofSummary:
-            "Rather than overwhelming the interface, the build keeps the experience calm for reading while the backend handles structured storage and retrieval.",
-          highlights: [
-            "Built MongoDB and Express foundations for publishing, storage, and retrieval",
-            "Designed a cleaner reading UI to support engagement without visual clutter",
-            "Structured routing and data flow so the platform stays straightforward as content grows",
-          ],
-          outcome:
-            "This project reflects a product-minded content system, where backend decisions directly support a better reading experience.",
-          tech: ["MongoDB", "Express.js", "Structured Routing"],
-          live: "",
-          github: "",
-          status: "Project links available on request",
-          visualType: "masonry",
-        },
-        {
-          id: 4,
-          title: "Reels Food App",
-          meta: [
-            { label: "Type", value: "Food discovery product" },
-            { label: "Focus", value: "Short-form browsing" },
-            { label: "Role", value: "UI systems and ongoing backend work" },
-          ],
-          description:
-            "An in-progress food discovery app that borrows from short-form media to make browsing feel faster, richer, and more engaging.",
-          proofTitle:
-            "A discovery flow that treats food browsing like content, without losing clarity.",
-          proofSummary:
-            "The product direction uses video-led browsing and a scalable UI structure to keep the experience lively while the backend and business logic continue to take shape.",
-          highlights: [
-            "Designed a browsing model inspired by modern short-form content habits",
-            "Built the UI structure to support video-based discovery without visual overload",
-            "Currently extending the backend layer and business logic toward a fuller product flow",
-          ],
-          outcome:
-            "It serves as current proof of how I think about entertainment-driven discovery, interface structure, and staged product development.",
-          tech: ["React", "Scalable UI", "Backend Logic"],
-          live: "",
-          github: "https://github.com/xoxo-Divyansh/Reels-Foods-app",
-          status: "In progress",
-          visualType: "feed",
+          tech: ["MongoDB", "Express.js", "Content Routing", "Reading UX"],
+          liveUrl: "https://noorvii-shayaris.vercel.app/",
+          repoUrl: "https://github.com/xoxo-Divyansh/noorvii-shayaries",
+          images: createProjectImages("noorvii", [
+            {
+              file: "noorvi_home.png",
+              alt: "Noorvii Shayaris home interface screenshot",
+              caption:
+                "The home screen uses cleaner spacing and hierarchy so content discovery feels quieter and more intentional.",
+            },
+            {
+              file: "noorvii_shayaries.png",
+              alt: "Noorvii Shayaris listing interface screenshot",
+              caption:
+                "The content list leans on readable spacing and hierarchy so the experience stays reading-first rather than ornamental.",
+            },
+            {
+              file: "noorvii-catagory_pg.png",
+              alt: "Noorvii Shayaris category page screenshot",
+              caption:
+                "Category browsing stays structured and easy to scan, which matters more as the content library grows.",
+            },
+            {
+              file: "noorvi_dashboard.png",
+              alt: "Noorvii Shayaris dashboard screenshot",
+              caption:
+                "Backend management screens carry the same restrained visual language, keeping editorial workflows usable and focused.",
+            },
+            {
+              file: "noorvi_dashbord_bottom.png",
+              alt: "Noorvii Shayaris dashboard lower section screenshot",
+              caption:
+                "The dashboard continues the same spacing logic deeper into the interface, which helps the product feel reliably composed.",
+            },
+            {
+              file: "noorvi_Download_opt.png",
+              alt: "Noorvii Shayaris download options screenshot",
+              caption:
+                "Utility actions appear with enough separation and clarity that secondary tasks do not disrupt the reading atmosphere.",
+            },
+            {
+              file: "noorvi_download .png",
+              alt: "Noorvii Shayaris download flow screenshot",
+              caption:
+                "Even functional states such as downloading stay visually calm, reinforcing the product's quieter tone.",
+            },
+            {
+              file: "noorvi_shayari_pannel.png",
+              alt: "Noorvii Shayaris reading panel screenshot",
+              caption:
+                "The reading panel shows the project at its best: content centered, distractions reduced, and hierarchy doing the work.",
+            },
+            {
+              file: "noorvi_II.png",
+              alt: "Noorvii Shayaris alternate interface screenshot",
+              caption:
+                "An alternate screen confirms the system holds together across multiple content surfaces, not just one polished page.",
+            },
+          ]),
         },
       ],
 
